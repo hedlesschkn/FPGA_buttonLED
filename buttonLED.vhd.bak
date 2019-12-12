@@ -1,0 +1,22 @@
+-- hello world for Altera Cyclone II EP2C5T144C8N mini board
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE,numeric_std.all;
+
+entity buttonLED is
+port(
+	clk	: in std_logic; --clock on pin 17
+	LED0	: out std_logic; --LED 'D5' on pin 3
+	LED1	: out std_logic; --LED 'D4' on pin 7
+	LED2	: out std_logic; --LED 'D2' on pin 9
+	btn0	: in std_logic --button 'key' on pin 114
+);
+end buttonLED;
+
+architecture Behavioral of buttonLED is
+begin
+	LED0 <= btn0;
+	LED1 <= not btn0;
+	LED3 <= clk;
+end Behavioral;
